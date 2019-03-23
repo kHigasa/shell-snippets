@@ -1,4 +1,7 @@
 #!/bin/sh
-# ./make-script.sh Linux ping-pong.sh
+# ./make-script.sh ping-pong.sh Linux
 
-cd "$1" && touch "$2" && chmod +x "$2" && nvim "$2"
+dst="$2"
+
+cd "${dst:=Linux}" && touch "$1" && chmod +x "$1" && nvim "$1"
+
